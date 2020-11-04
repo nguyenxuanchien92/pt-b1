@@ -8,11 +8,20 @@ public class Main {
 
         System.out.println("Giải phương trình bậc nhất một ẩn");
 
-        System.out.print("NHập giá trị a");
+        System.out.print("NHập giá trị a:");
 
+        Scanner sc = new Scanner(System.in);
 
+        Double numberA = sc.nextDouble();
+        System.out.println();
+
+        System.out.print("NHập giá trị b:");
+        Double numberB = sc.nextDouble();
+
+        PhuongTrinh bt = new PhuongTrinh(numberA,numberB);
+
+        System.out.println(bt.calculator(numberA,numberB));
     }
-
 
 }
 

@@ -12,7 +12,7 @@ public class PhuongTrinh {
         return this.numberA;
     }
 
-    public void setNumberA(int numberA) {
+    public void setNumberA(double numberA) {
         this.numberA = numberA;
     }
 
@@ -20,23 +20,37 @@ public class PhuongTrinh {
         return this.numberB;
     }
 
-    public void setNumberB(int numberB) {
+    public void setNumberB(double numberB) {
         this.numberB = numberB;
     }
 
-    public int calculator(int numberA, int numberB) {
-        int result = 0;
+    public String calculator(double numberA, double numberB) {
+        String result = "";
 
-        isNumber(numberA, numberB);
+        boolean valA = isZero(numberA);
+        boolean valB = isZero(numberB);
+
+        if (valA) {
+            if (valB) {
+                result = String.format("result: %f", -numberB / numberA);
+            } else {
+                result = "Result : all value of X";
+            }
+        } else {
+            if (valB) {
+                result = "not value X";
+            }else {
+                result = "Result : all value of X";
+            }
+        }
 
         return result;
     }
 
-    private boolean isNumber(int numberA, int numberB) {
-        if (numberA != 0){
-
+    private boolean isZero(double number) {
+        if (number != 0) {
             return true;
         }
-        return true;
+        return false;
     }
 }
